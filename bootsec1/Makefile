@@ -14,3 +14,7 @@ bootsec1.o:	bootsec1.s
 .PHONY: clean
 clean:
 	rm -f *.img *.bin *.o *.sec
+
+.PHONY: run
+run:		bootsec1.img
+	qemu-system-i386 -display curses ./bootsec1.img
